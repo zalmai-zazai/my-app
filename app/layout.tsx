@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 
 import './globals.css';
+import MainLayout from '@/Components/MainLayout';
+import MenuContextProvider from '@/Context/MenuContext';
 
 export const metadata: Metadata = {
   title: 'Zazai App',
@@ -14,7 +16,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <MenuContextProvider>
+          {' '}
+          <MainLayout>{children}</MainLayout>
+        </MenuContextProvider>
+      </body>
     </html>
   );
 }
