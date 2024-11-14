@@ -1,12 +1,12 @@
-import type { Metadata } from 'next';
+import type { Metadata } from "next";
 
-import './globals.css';
-import MainLayout from '@/Components/MainLayout';
-import MenuContextProvider from '@/Context/MenuContext';
+import "./globals.css";
+import MainLayout from "@/Components/Layout/MainLayout";
+import MenuContextProvider from "@/Context/MenuContext";
 
 export const metadata: Metadata = {
-  title: 'Zazai App',
-  description: 'Create by Zazai',
+  title: "Zazai App",
+  description: "Create by Zazai",
 };
 
 export default function RootLayout({
@@ -18,7 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <MenuContextProvider>
-          {' '}
+          {" "}
           <MainLayout>{children}</MainLayout>
         </MenuContextProvider>
       </body>

@@ -1,8 +1,10 @@
-'use client';
-import { MenuContext } from '@/Context/MenuContext';
-import React, { useContext } from 'react';
-import { FaRegUser } from 'react-icons/fa';
-import { FaBars } from 'react-icons/fa';
+"use client";
+import { MenuContext } from "@/Context/MenuContext";
+import React, { useContext } from "react";
+
+import { FaBars } from "react-icons/fa";
+import UserAreaSelectBox from "./UserAreaSelectBox";
+import LanguageSelectBox from "./LanguageSelectBox";
 
 const MainHeader = () => {
   const { toggle } = useContext(MenuContext);
@@ -11,8 +13,14 @@ const MainHeader = () => {
       <div>Brand</div>
       <div className="flex items-center gap-2">
         <div>
-          <FaRegUser className="cursor-pointer" />
+          <LanguageSelectBox />
         </div>
+        <div>
+          <UserAreaSelectBox />
+        </div>
+        {/* <div>
+          <FaRegUser className="cursor-pointer" />
+        </div> */}
         <div className="lg:hidden ">
           <FaBars onClick={() => toggle()} className="cursor-pointer " />
         </div>
